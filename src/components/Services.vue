@@ -1,102 +1,64 @@
-<script setup>
-import { onMounted } from 'vue'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
-
-onMounted(() => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#layanan',
-      start: 'top 85%',
-      toggleActions: 'play none none reverse'
-    },
-    defaults: { ease: 'expo.out', duration: 1.2 }
-  })
-
-  tl.fromTo('.reveal-service-text', { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.15 })
-    .fromTo('.service-line-draw', { scaleX: 0 }, { scaleX: 1, duration: 1.5, stagger: 0.2 }, '-=1')
-})
-</script>
-
 <template>
-  <section id="layanan" class="py-20 md:py-32 px-6 bg-white font-poppins relative selection:bg-[#8B5CF6] selection:text-white overflow-hidden border-t border-zinc-50">
+  <section id="layanan" class="py-24 md:py-40 px-6 bg-white font-poppins relative overflow-hidden border-t border-zinc-100 selection:bg-[#8B5CF6] selection:text-white">
 
-    <!-- Pattern: Subtle Dot Grid -->
-    <div class="absolute inset-0 opacity-[0.02] pointer-events-none"
+    <!-- Pattern: Radial Dots (Konsisten dengan Hero) -->
+    <div class="absolute inset-0 opacity-[0.015] pointer-events-none"
          style="background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px); background-size: 30px 30px;">
     </div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="service-wrapper max-w-5xl mx-auto relative z-10 w-full">
 
-      <!-- Header: Centered on Mobile -->
-      <div class="flex flex-col items-center text-center md:items-start md:text-left mb-24">
-        <div class="reveal-service-text flex items-center gap-3 mb-6">
-          <div class="w-8 h-[1px] bg-[#8B5CF6]"></div>
-          <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-[#8B5CF6]">Layanan Komprehensif</span>
+      <!-- Header Section: Full Left Aligned -->
+      <div class="flex flex-col items-start text-left mb-24 md:mb-32">
+        <!-- Badge (Konsisten dengan Hero) -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-100 bg-purple-50/50 mb-8">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#8B5CF6]"></span>
+          </span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#8B5CF6]">Katalog Layanan & Order</span>
         </div>
 
-        <h3 class="reveal-service-text text-3xl md:text-5xl font-bold tracking-tighter text-[#1A1A1A] leading-[1.1] mb-8">
-          Solusi Digital.<br />
-          <span class="text-zinc-300 italic">Presisi & Bergaransi.</span>
+        <h3 class="text-4xl md:text-6xl font-bold tracking-tighter text-[#1A1A1A] leading-[1] mb-10 uppercase">
+          EKSEKUSI DIGITAL.<br />
+          <span class="text-zinc-200 italic">HASIL PRESISI.</span>
         </h3>
 
-        <p class="reveal-service-text max-w-lg text-[12px] md:text-[13px] text-zinc-500 font-light leading-relaxed">
-          Menyediakan layanan pengembangan perangkat lunak dengan standar industri untuk kebutuhan akademik. Fokus pada kode yang bersih, terdokumentasi, dan siap dipresentasikan.
-        </p>
-      </div>
-
-      <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 relative">
-
-        <!-- Item 01: Frontend -->
-        <div class="reveal-service-text group flex flex-col items-center text-center md:items-start md:text-left pt-10 relative">
-          <div class="service-line-draw absolute top-0 left-0 w-full h-[1px] bg-zinc-100 origin-left"></div>
-          <span class="text-[10px] font-mono text-zinc-300 mb-6 tracking-widest transition-colors group-hover:text-[#8B5CF6]">01 / FRONTEND</span>
-          <h4 class="text-xs font-bold text-[#1A1A1A] uppercase tracking-widest mb-4">Slicing UI & Responsif</h4>
-          <p class="text-[11px] text-zinc-400 leading-relaxed font-light">
-            Konversi desain ke React atau Vue dengan tingkat presisi tinggi. Optimal untuk tugas pemrograman web modern.
-          </p>
-        </div>
-
-        <!-- Item 02: Fullstack -->
-        <div class="reveal-service-text group flex flex-col items-center text-center md:items-start md:text-left pt-10 relative">
-          <div class="service-line-draw absolute top-0 left-0 w-full h-[1px] bg-zinc-100 origin-left"></div>
-          <span class="text-[10px] font-mono text-zinc-300 mb-6 tracking-widest transition-colors group-hover:text-[#8B5CF6]">02 / FULLSTACK</span>
-          <h4 class="text-xs font-bold text-[#1A1A1A] uppercase tracking-widest mb-4">Sistem CRUD & UAS</h4>
-          <p class="text-[11px] text-zinc-400 leading-relaxed font-light">
-            Pengembangan sistem informasi terintegrasi menggunakan Laravel atau Supabase. Siap pakai untuk project UAS.
-          </p>
-        </div>
-
-        <!-- Item 03: Mobile -->
-        <div class="reveal-service-text group flex flex-col items-center text-center md:items-start md:text-left pt-10 relative">
-          <div class="service-line-draw absolute top-0 left-0 w-full h-[1px] bg-zinc-100 origin-left"></div>
-          <span class="text-[10px] font-mono text-zinc-300 mb-6 tracking-widest transition-colors group-hover:text-[#8B5CF6]">03 / MOBILE</span>
-          <h4 class="text-xs font-bold text-[#1A1A1A] uppercase tracking-widest mb-4">Aplikasi Flutter</h4>
-          <p class="text-[11px] text-zinc-400 leading-relaxed font-light">
-            Pembuatan aplikasi mobile lintas platform dengan fitur lengkap dan original untuk tugas akhir atau skripsi.
-          </p>
-        </div>
-      </div>
-
-      <!-- Simplified CTA -->
-      <!-- <div class="reveal-service-text mt-24 flex justify-center md:justify-start">
-        <a href="https://wa.me/6283849521229" target="_blank" class="group flex items-center gap-6">
-          <div class="relative">
-            <div class="w-12 h-12 rounded-full border border-zinc-100 flex items-center justify-center group-hover:border-[#8B5CF6] transition-all duration-500">
-              <svg class="w-4 h-4 text-zinc-400 group-hover:text-[#8B5CF6] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+        <!-- Technical Metadata Box -->
+        <div class="flex flex-col md:flex-row gap-8 items-start md:items-center border-l border-zinc-100 pl-8">
+            <p class="max-w-xs text-[11px] md:text-[12px] text-zinc-400 font-light leading-relaxed uppercase tracking-widest">
+              Layanan pengembangan perangkat lunak khusus akademik dengan jaminan kode bersih dan orisinalitas 100%.
+            </p>
+            <div class="hidden md:block h-12 w-px bg-zinc-100"></div>
+            <div class="text-[9px] font-mono text-zinc-300 space-y-1 uppercase tracking-tighter">
+                <p>Status: Operational</p>
+                <p>Standard: Industrial_Grade</p>
+                <p>Security: No_Plagiarism</p>
             </div>
-          </div>
-          <div class="flex flex-col items-start text-left">
-            <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-300 group-hover:text-[#8B5CF6] transition-colors italic">Bimbingan Teknis Tersedia</span>
-            <span class="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-widest border-b border-zinc-100 group-hover:border-[#8B5CF6] transition-all">Konsultasi Tugas Sekarang</span>
-          </div>
-        </a>
-      </div> -->
+        </div>
+      </div>
+
+      <!-- Services Grid: Technical Blueprint Style -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 relative border-t border-l border-zinc-100">
+        <div v-for="(s, i) in [
+          { n: '01', t: 'Frontend Architecture', d: 'Slicing UI presisi tinggi menggunakan React atau Vue. Responsif dan siap dipresentasikan.' },
+          { n: '02', t: 'System Integration', d: 'Manajemen basis data dan sistem CRUD terintegrasi Laravel atau Supabase untuk project UAS.' },
+          { n: '03', t: 'Mobile Engineering', d: 'Pembuatan aplikasi mobile lintas platform dengan Flutter. Fitur lengkap dan kode original.' }
+        ]" :key="i" class="group relative flex flex-col items-start text-left p-10 border-r border-b border-zinc-100 hover:bg-zinc-50/30">
+
+          <!-- Corner Bracket on Hover -->
+          <div class="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#8B5CF6] opacity-0 group-hover:opacity-100"></div>
+
+          <span class="text-[10px] font-mono text-zinc-200 group-hover:text-[#8B5CF6] mb-8 block uppercase tracking-widest">
+            [ ID: 0x0{{ i + 1 }} ]
+          </span>
+          <h4 class="text-sm font-bold text-[#1A1A1A] uppercase tracking-widest mb-6">
+            {{ s.t }}
+          </h4>
+          <p class="text-[11px] text-zinc-400 leading-relaxed font-light">
+            {{ s.d }}
+          </p>
+        </div>
+      </div>
 
     </div>
   </section>

@@ -1,143 +1,147 @@
 <script setup>
+import { onMounted } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Autoplay } from 'swiper/modules';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import 'swiper/css';
-import 'swiper/css/navigation';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const modules = [Navigation, Autoplay];
 
+const waNumber = "6283849521229"
+const waMessage = encodeURIComponent("Halo Aerocode, saya mau order pengerjaan tugas website.")
+
 const projects = [
-  {
-    id: 1,
-    title: 'KosKita',
-    category: 'Tugas Akhir / Skripsi',
-    tech: ['Laravel 11', 'React 19'],
-    status: 'Ready to Present',
-    description: 'Sistem manajemen kos dengan fitur multi-role dan laporan otomatis. Full source code.'
-  },
-  {
-    id: 2,
-    title: 'LibroModern',
-    category: 'Project UAS',
-    tech: ['React', 'Supabase'],
-    status: 'Siap Kumpul',
-    description: 'Perpustakaan digital minimalis dengan integrasi database praktis dan responsif.'
-  },
-  {
-    id: 3,
-    title: 'DompetKu AI',
-    category: 'Tugas Mata Kuliah',
-    tech: ['Vue', 'AI Integration'],
-    status: 'Anti-Plagiasi',
-    description: 'Aplikasi finansial pintar dengan saran otomatis berbasis AI. Kode bersih & unik.'
-  },
-  {
-    id: 4,
-    title: 'TypeLab Arena',
-    category: 'Tugas Pemrograman Web',
-    tech: ['React 19', 'Vite'],
-    status: 'High Quality',
-    description: 'Platform latihan typing real-time untuk kebutuhan presentasi di depan dosen.'
-  }
+  { id: 1, title: 'KosKita Ecosystem', cat: 'Fullstack', img: './porto/kos.png', tech: 'Laravel + React' },
+  { id: 2, title: 'LibroModern Lib', cat: 'Frontend', img: './porto/lib.png', tech: 'React + Supabase' },
+  { id: 3, title: 'DompetKu AI', cat: 'AI System', img: './porto/dompet.png', tech: 'Vue + Gemini' },
+  { id: 4, title: 'TypeLab Arena', cat: 'Web App', img: './porto/type.png', tech: 'React 19' }
 ]
+
+onMounted(() => {
+  // Reveal Awal
+  gsap.fromTo('.reveal-p', { y: 20, autoAlpha: 0 }, {
+    y: 0, autoAlpha: 1, stagger: 0.1, duration: 0.8, ease: 'power3.out',
+    scrollTrigger: { trigger: '#portfolio', start: 'top 85%' }
+  });
+
+  // Google Scrub Effect
+  gsap.to('.p-wrapper', {
+    scrollTrigger: {
+      trigger: '#portfolio',
+      start: 'top top',
+      end: 'bottom 15%',
+      scrub: 1,
+    },
+    y: -40,
+    scale: 0.97,
+    autoAlpha: 0,
+    ease: 'none'
+  });
+})
 </script>
 
 <template>
-  <section id="portfolio" class="py-24 px-6 bg-white border-t border-zinc-50 font-poppins relative overflow-hidden selection:bg-[#8B5CF6] selection:text-white">
+  <section id="portfolio" class="py-20 md:py-32 px-6 bg-white font-poppins relative overflow-hidden border-t border-zinc-50 selection:bg-[#8B5CF6] selection:text-white">
 
-    <!-- PATTERN: Micro-Dot Grid -->
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
-         style="background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px); background-size: 24px 24px;">
+    <!-- Pattern: Super Minimalist Dot -->
+    <div class="absolute inset-0 opacity-[0.015] pointer-events-none"
+         style="background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px); background-size: 30px 30px;">
     </div>
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="p-wrapper max-w-5xl mx-auto relative z-10 w-full">
 
-      <!-- Header: Fokus ke Joki Tugas -->
-      <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 relative">
-        <div class="relative">
-          <!-- ELEMENT: Corner Bracket -->
-          <div class="absolute -top-6 -left-6 w-4 h-4 border-t border-l border-zinc-200"></div>
-
-          <div class="flex items-center gap-2 mb-4">
-            <span class="flex h-1.5 w-1.5 rounded-full bg-[#8B5CF6] animate-pulse"></span>
-            <h2 class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-400">Katalog Hasil Pengerjaan</h2>
-          </div>
-          <h3 class="text-3xl md:text-4xl font-bold tracking-tighter text-[#1A1A1A] leading-tight">
-            Tugas Selesai, <br /><span class="text-[#8B5CF6]">Kualitas Standar Industri.</span>
-          </h3>
+      <!-- Header: Simple & Sharp -->
+      <div class="flex flex-col items-start text-left mb-16 md:mb-24">
+        <div class="reveal-p flex items-center gap-3 mb-6">
+          <div class="w-8 h-[1px] bg-[#8B5CF6]"></div>
+          <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-[#8B5CF6]">Selected Works</span>
         </div>
 
-        <!-- Custom Navigation -->
-        <div class="flex gap-3">
-          <button class="swiper-prev-port w-10 h-10 rounded-full border border-zinc-100 flex items-center justify-center hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white transition-all duration-300">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="reveal-p text-3xl md:text-5xl font-bold tracking-tighter text-[#1A1A1A] leading-tight uppercase">
+          Katalog Project.<br />
+          <span class="text-zinc-300 italic font-medium">Standar Industri.</span>
+        </h3>
+      </div>
+
+      <!-- Slider Area -->
+      <div class="reveal-p">
+        <swiper
+          :modules="modules"
+          :slides-per-view="1"
+          :space-between="20"
+          :loop="true"
+          :autoplay="{ delay: 4000 }"
+          :navigation="{ prevEl: '.prev-p', nextEl: '.next-p' }"
+          :breakpoints="{ '768': { slidesPerView: 2, spaceBetween: 30 } }"
+          class="pb-10"
+        >
+          <swiper-slide v-for="p in projects" :key="p.id">
+            <div class="group relative flex flex-col border border-zinc-100 rounded-sm bg-white overflow-hidden transition-all duration-500 hover:border-[#8B5CF6]/40 hover:shadow-xl hover:shadow-zinc-200/50">
+
+              <!-- Visual -->
+              <div class="aspect-video bg-zinc-50 overflow-hidden">
+                <img :src="p.img" :alt="p.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+
+              <!-- Content -->
+              <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-4">
+                  <span class="text-[9px] font-mono text-zinc-300 uppercase tracking-widest">{{ p.cat }}</span>
+                  <span class="text-[8px] font-bold text-[#8B5CF6] uppercase tracking-widest border border-[#8B5CF6]/20 px-2 py-0.5 rounded-full">Active</span>
+                </div>
+
+                <h4 class="text-base md:text-lg font-bold text-[#1A1A1A] mb-2 group-hover:text-[#8B5CF6] transition-colors uppercase tracking-tight">
+                  {{ p.title }}
+                </h4>
+                <p class="text-[10px] md:text-[11px] text-zinc-400 font-light mb-6 uppercase tracking-wider">
+                  Tech: {{ p.tech }}
+                </p>
+
+                <!-- Micro Link -->
+                <div class="flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-zinc-300 group-hover:text-[#1A1A1A] transition-all">
+                  <span>View Details</span>
+                  <div class="w-4 h-[1px] bg-zinc-200 group-hover:w-8 group-hover:bg-[#8B5CF6] transition-all"></div>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
+
+        <!-- Minimalist Nav -->
+        <div class="flex gap-4 mt-8 md:mt-12">
+          <button class="prev-p w-10 h-10 rounded-full border border-zinc-100 flex items-center justify-center hover:bg-[#1A1A1A] hover:text-white transition-all group">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <button class="swiper-next-port w-10 h-10 rounded-full border border-zinc-100 flex items-center justify-center hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white transition-all duration-300">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <button class="next-p w-10 h-10 rounded-full border border-zinc-100 flex items-center justify-center hover:bg-[#1A1A1A] hover:text-white transition-all group">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
       </div>
 
-      <!-- Slider Area -->
-      <swiper
-        :modules="modules"
-        :slides-per-view="1"
-        :space-between="30"
-        :loop="true"
-        :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        :navigation="{ prevEl: '.swiper-prev-port', nextEl: '.swiper-next-port' }"
-        :breakpoints="{ '768': { slidesPerView: 2, spaceBetween: 40 } }"
-        class="portfolio-swiper"
-      >
-        <swiper-slide v-for="project in projects" :key="project.id">
-          <div class="group flex flex-col items-start transition-all">
-            <div class="relative w-full aspect-video bg-zinc-50 rounded-2xl border border-zinc-100 mb-8 overflow-hidden group-hover:border-[#8B5CF6]/30 transition-all duration-500">
-              <div class="absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-              <div class="absolute top-2 left-2 w-2 h-2 border-t border-l border-zinc-200 group-hover:border-[#8B5CF6]/40"></div>
-              <div class="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-zinc-200 group-hover:border-[#8B5CF6]/40"></div>
-
-              <div class="absolute top-4 right-4 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full border border-zinc-50 shadow-sm">
-                <span class="text-[8px] font-bold uppercase tracking-widest text-[#8B5CF6]">{{ project.status }}</span>
-              </div>
-            </div>
-
-            <div class="w-full relative">
-              <div class="flex items-center gap-4 mb-3">
-                 <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-[0.2em]">{{ project.category }}</span>
-                 <div class="h-px flex-1 bg-zinc-50 group-hover:bg-[#8B5CF6]/10 transition-colors"></div>
-              </div>
-
-              <h4 class="text-lg font-bold text-[#1A1A1A] mb-3 tracking-tight group-hover:text-[#8B5CF6] transition-colors uppercase">
-                {{ project.title }}
-              </h4>
-              <p class="text-[11px] text-zinc-500 font-light leading-relaxed mb-6">
-                {{ project.description }}
-              </p>
-
-              <div class="flex flex-wrap gap-2">
-                <span v-for="t in project.tech" :key="t" class="text-[8px] font-bold text-zinc-400 bg-zinc-50 px-2 py-0.5 rounded border border-zinc-100/50 uppercase tracking-tighter">
-                  {{ t }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </swiper-slide>
-      </swiper>
-
-      <!-- CTA -->
-      <!-- <div class="mt-24 flex justify-start items-center border-t border-zinc-50 pt-12 relative">
-        <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-zinc-200"></div>
-
-        <a href="https://wa.me/6281234567890" target="_blank" class="group flex items-center gap-4 transition-all">
-          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1A1A1A] group-hover:text-[#8B5CF6]">Amankan Nilai A Milikmu Sekarang</span>
-          <div class="w-9 h-9 rounded-full border border-zinc-100 flex items-center justify-center group-hover:bg-[#8B5CF6] group-hover:border-[#8B5CF6] transition-all duration-300">
-            <svg class="w-3.5 h-3.5 text-black group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      <!-- Footer CTA -->
+      <div class="reveal-p mt-20 pt-10 border-t border-zinc-50 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+        <a :href="`https://wa.me/${waNumber}?text=${waMessage}`"
+           target="_blank"
+           class="group flex items-center gap-6">
+          <div class="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center group-hover:bg-[#8B5CF6] group-hover:border-[#8B5CF6] transition-all duration-500">
+            <svg class="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </div>
+          <div class="flex flex-col items-start">
+            <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-300 italic group-hover:text-[#8B5CF6]">Direct Access</span>
+            <span class="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-widest border-b border-zinc-100 group-hover:border-[#8B5CF6]">Order via WhatsApp</span>
+          </div>
         </a>
-      </div> -->
+
+        <div class="text-[8px] font-mono text-zinc-300 tracking-[0.5em] uppercase">
+          Aerocode Systems // © 2026
+        </div>
+      </div>
 
     </div>
   </section>

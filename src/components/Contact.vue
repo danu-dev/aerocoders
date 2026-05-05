@@ -14,7 +14,7 @@
         <div class="absolute -top-6 -left-6 w-4 h-4 border-t border-l border-zinc-200"></div>
 
         <div class="flex items-center gap-2 mb-6">
-          <span class="flex h-1.5 w-1.5 rounded-full bg-[#8B5CF6] animate-pulse"></span>
+          <span class="flex h-1.5 w-1.5 rounded-full bg-[#8B5CF6]"></span>
           <h2 class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-400">
             Solusi Akademik Premium
           </h2>
@@ -33,17 +33,17 @@
 
           <!-- WhatsApp -->
           <a href="https://wa.me/6283849521229" target="_blank" class="group block">
-            <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-[0.3em] mb-4 block group-hover:text-[#8B5CF6] transition-colors italic">/ Respon Cepat</span>
-            <span class="text-2xl md:text-3xl font-bold text-[#1A1A1A] border-b border-zinc-50 pb-2 group-hover:border-[#8B5CF6] transition-all">
+            <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-[0.3em] mb-4 block group-hover:text-[#8B5CF6] italic">/ Respon Cepat</span>
+            <span class="text-2xl md:text-3xl font-bold text-[#1A1A1A] border-b border-zinc-50 pb-2 group-hover:border-[#8B5CF6]">
               +62 838 4952 1229
             </span>
           </a>
 
           <!-- Email: Penyesuaian untuk email panjang -->
           <a href="mailto:mohammadafdanu@gmail.com" class="group block">
-            <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-[0.3em] mb-4 block group-hover:text-[#8B5CF6] transition-colors italic">/ Email Resmi</span>
+            <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-[0.3em] mb-4 block group-hover:text-[#8B5CF6] italic">/ Email Resmi</span>
             <!-- text-lg pada mobile agar tidak overflow, md:text-2xl/3xl pada desktop -->
-            <span class="text-lg sm:text-xl md:text-2xl lg:text-[1.6rem] font-bold text-[#1A1A1A] border-b border-zinc-50 pb-2 group-hover:border-[#8B5CF6] transition-all break-all sm:break-normal leading-tight">
+            <span class="text-lg sm:text-xl md:text-2xl lg:text-[1.6rem] font-bold text-[#1A1A1A] border-b border-zinc-50 pb-2 group-hover:border-[#8B5CF6] break-all sm:break-normal leading-tight">
               mohammadafdanu@gmail.com
             </span>
           </a>
@@ -63,10 +63,10 @@
               'Aplikasi Mobile', 'Arsitektur Basis Data'
             ]" :key="index" class="group">
               <div class="flex flex-col gap-1.5">
-                <span class="text-[10px] font-bold text-zinc-200 group-hover:text-[#8B5CF6] transition-colors tracking-widest">
+                <span class="text-[10px] font-bold text-zinc-200 group-hover:text-[#8B5CF6] tracking-widest">
                   0{{ index + 1 }} —
                 </span>
-                <span class="text-[11px] font-bold text-zinc-500 group-hover:text-black transition-colors uppercase tracking-wider leading-relaxed">
+                <span class="text-[11px] font-bold text-zinc-500 group-hover:text-black uppercase tracking-wider leading-relaxed">
                   {{ service }}
                 </span>
               </div>
@@ -81,8 +81,8 @@
           Kode Bersih • Standar Industri • No Plagiarism
         </p>
         <div class="flex gap-8">
-          <a href="https://www.instagram.com/dannuu________" class="text-[9px] font-bold text-zinc-300 hover:text-black transition-colors uppercase tracking-[0.2em]">Instagram</a>
-          <a href="https://github.com/danu-dev" target="_blank" class="text-[9px] font-bold text-zinc-300 hover:text-black transition-colors uppercase tracking-[0.2em]">GitHub</a>
+          <a href="https://www.instagram.com/dannuu________" class="text-[9px] font-bold text-zinc-300 hover:text-black uppercase tracking-[0.2em]">Instagram</a>
+          <a href="https://github.com/danu-dev" target="_blank" class="text-[9px] font-bold text-zinc-300 hover:text-black uppercase tracking-[0.2em]">GitHub</a>
         </div>
       </div>
 

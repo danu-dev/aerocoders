@@ -38,7 +38,7 @@ const buildVersion = "v3.1.1";
           <h4 class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-700 mb-6 italic">/ Navigasi</h4>
           <ul class="space-y-3">
             <li v-for="link in [['Layanan', '#layanan'], ['Portofolio', '#portofolio'], ['Tentang', '#tentang'], ['Kontak', '#kontak']]" :key="link[0]">
-              <a :href="link[1]" class="text-[10px] text-zinc-500 hover:text-white transition-colors uppercase tracking-widest block">
+              <a :href="link[1]" class="text-[10px] text-zinc-500 hover:text-white uppercase tracking-widest block">
                 {{ link[0] }}
               </a>
             </li>
@@ -49,9 +49,9 @@ const buildVersion = "v3.1.1";
         <div class="md:col-span-3">
           <h4 class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-700 mb-6 italic">/ Hubungi</h4>
           <ul class="space-y-3 text-[10px] font-light text-zinc-500">
-            <li><a href="https://github.com/danu-dev" target="_blank" class="hover:text-white transition-colors block">GitHub</a></li>
-            <li><a href="mailto:halo@danu.dev" class="hover:text-white transition-colors block">mohammadafdanu@gmail.com</a></li>
-            <li><a href="https://wa.me/6281234567890" class="hover:text-white transition-colors block">+62 838 4952 1229</a></li>
+            <li><a href="https://github.com/danu-dev" target="_blank" class="hover:text-white block">GitHub</a></li>
+            <li><a href="mailto:halo@danu.dev" class="hover:text-white block">mohammadafdanu@gmail.com</a></li>
+            <li><a href="https://wa.me/6281234567890" class="hover:text-white block">+62 838 4952 1229</a></li>
           </ul>
         </div>
       </div>
