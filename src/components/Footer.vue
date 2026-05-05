@@ -1,66 +1,96 @@
 <script setup>
 const currentYear = new Date().getFullYear();
+const buildVersion = "v3.1.1";
 </script>
 
 <template>
-  <footer class="bg-black text-white pt-24 pb-8 px-6 font-poppins selection:bg-[#8B5CF6] selection:text-white overflow-hidden">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 mb-20">
+  <footer class="bg-black text-white pt-24 pb-12 px-6 font-poppins selection:bg-[#8B5CF6] selection:text-white relative overflow-hidden">
 
-        <!-- Joki Narrative & Branding -->
-        <div class="border-l border-zinc-800 pl-6">
-          <h3 class="text-lg font-bold tracking-tighter mb-4 flex items-center gap-2">
-            AEROCODE<span class="text-[#8B5CF6]">.</span>
-          </h3>
-          <p class="max-w-xs text-[11px] text-zinc-500 font-normal leading-relaxed mb-6">
-            Penyedia solusi digital dengan standar industri untuk kebutuhan akademik. Fokus pada pengerjaan tugas coding yang presisi, kode bersih, dan jaminan kualitas untuk mahasiswa/siswa.
-          </p>
-          <div class="flex items-center gap-3">
-             <span class="text-[9px] font-bold text-zinc-700 uppercase tracking-widest px-2 py-1 border border-zinc-800 rounded">Industrial Standards</span>
-             <span class="text-[9px] font-bold text-zinc-700 uppercase tracking-widest px-2 py-1 border border-zinc-800 rounded">Academic Support</span>
+    <!-- PATTERN: High-Density Micro-Dot Grid -->
+    <div class="absolute inset-0 opacity-[0.05] pointer-events-none"
+         style="background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px); background-size: 24px 24px;">
+    </div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-12 gap-16 mb-24">
+
+        <!-- Branding Section -->
+        <div class="md:col-span-6 relative">
+          <div class="absolute -top-6 -left-6 w-4 h-4 border-t border-l border-zinc-800"></div>
+
+          <div class="flex items-center gap-3 mb-6">
+            <h3 class="text-xl font-bold tracking-tighter">
+              AEROCODE<span class="text-[#8B5CF6]">.</span>
+            </h3>
+            <span class="text-[7px] font-mono text-zinc-700 border border-zinc-800 px-1.5 py-0.5 rounded uppercase tracking-widest">
+              {{ buildVersion }}
+            </span>
           </div>
+
+          <p class="max-w-sm text-[11px] text-zinc-500 font-light leading-relaxed mb-8">
+            Penyedia solusi digital dengan fokus pada rekayasa perangkat lunak standar industri.
+            Kami menjamin setiap baris kode bersih, aman, dan siap untuk dipresentasikan.
+          </p>
         </div>
 
-        <!-- Sitemap & Social: Small Text -->
-        <div class="grid grid-cols-2 gap-8 md:justify-end">
-          <div class="flex flex-col gap-3">
-            <h4 class="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-600 mb-2">Explore</h4>
-            <a href="#services" class="text-[11px] font-normal text-zinc-400 hover:text-[#8B5CF6] transition-colors">Layanan Joki</a>
-            <a href="#portfolio" class="text-[11px] font-normal text-zinc-400 hover:text-[#8B5CF6] transition-colors">Katalog Tugas</a>
-            <a href="#about" class="text-[11px] font-normal text-zinc-400 hover:text-[#8B5CF6] transition-colors">Tentang Saya</a>
-          </div>
-          <div class="flex flex-col gap-3">
-            <h4 class="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-600 mb-2">Connect</h4>
-            <a href="https://github.com/DanzSukaRgb" target="_blank" rel="noopener noreferrer" class="text-[11px] font-normal text-zinc-400 hover:text-[#8B5CF6] transition-colors">GitHub</a>
-            <a href="mailto:halo@danu.dev" class="text-[11px] font-normal text-zinc-400 hover:text-[#8B5CF6] transition-colors">Email</a>
-            <a href="https://wa.me/6281234567890" class="text-[11px] font-normal text-zinc-400 hover:text-[#8B5CF6] transition-colors">WhatsApp</a>
-          </div>
+        <!-- Sitemap -->
+        <div class="md:col-span-3">
+          <h4 class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-700 mb-6 italic">/ Navigasi</h4>
+          <ul class="space-y-3">
+            <li v-for="link in [['Layanan', '#layanan'], ['Portofolio', '#portofolio'], ['Tentang', '#tentang'], ['Kontak', '#kontak']]" :key="link[0]">
+              <a :href="link[1]" class="text-[10px] text-zinc-500 hover:text-white transition-colors uppercase tracking-widest block">
+                {{ link[0] }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Connection -->
+        <div class="md:col-span-3">
+          <h4 class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-700 mb-6 italic">/ Hubungi</h4>
+          <ul class="space-y-3 text-[10px] font-light text-zinc-500">
+            <li><a href="https://github.com/danu-dev" target="_blank" class="hover:text-white transition-colors block">GitHub</a></li>
+            <li><a href="mailto:halo@danu.dev" class="hover:text-white transition-colors block">mohammadafdanu@gmail.com</a></li>
+            <li><a href="https://wa.me/6281234567890" class="hover:text-white transition-colors block">+62 838 4952 1229</a></li>
+          </ul>
         </div>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="border-t border-zinc-900 pt-10">
-        <!-- Minimalist Impact Text -->
-        <div class="relative group cursor-default mb-10 overflow-hidden">
-          <h2 class="text-[10vw] font-bold tracking-tighter text-zinc-900 leading-none select-none transition-all duration-700 group-hover:text-white/5">
-            A+ PROJECTS READY
+      <!-- Footer Bottom Area -->
+      <div class="border-t border-zinc-900 pt-16 relative">
+        <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-zinc-800"></div>
+
+        <!-- Impact Text: Skala Lebih Kecil & Center -->
+        <div class="mb-16 overflow-hidden pointer-events-none select-none relative">
+          <h2 class="text-5xl md:text-7xl font-bold tracking-[0.2em] text-center leading-none uppercase text-stroke opacity-90">
+            KODE BERSIH.
           </h2>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-          <!-- Small Info Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+          <!-- Info Hak Cipta -->
           <div class="flex items-center gap-4 text-[9px] text-zinc-600 font-bold uppercase tracking-[0.4em]">
             <span>&copy; {{ currentYear }} AEROCODE</span>
             <span class="w-1 h-1 bg-zinc-800 rounded-full"></span>
-            <span>Finalis Nasional JHIC 2025</span>
+            <span>PRESISI TINGGI</span>
           </div>
 
-          <!-- Industrial Badge -->
-          <div class="text-[9px] text-zinc-700 font-medium">
-            REKAYASA PERANGKAT LUNAK DENGAN PRESISI TINGGI.
+          <!-- Tech Stack -->
+          <div class="flex gap-6 text-[8px] text-zinc-700 font-bold uppercase tracking-widest">
+            <span>Tailwind</span>
+            <span>Laravel</span>
+            <span>Supabase</span>
+            <span>Vercel</span>
           </div>
         </div>
       </div>
     </div>
   </footer>
 </template>
+
+<style scoped>
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px #27272a; /* Zinc-800 */
+}
+</style>

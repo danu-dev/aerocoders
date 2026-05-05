@@ -20,29 +20,25 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="home" class="relative min-h-[calc(100dvh-72px)] md:min-h-[100dvh] flex flex-col items-center justify-center pt-[90px] sm:pt-24 px-5 sm:px-6 pb-14 sm:pb-20 overflow-hidden bg-white font-poppins">
-    <!-- Subtle Background Pattern -->
+  <section id="home" class="relative min-h-[calc(100dvh-72px)] md:min-h-[100dvh] flex flex-col items-center justify-center pt-[80px] sm:pt-20 px-5 sm:px-6 pb-14 sm:pb-20 overflow-hidden bg-white font-poppins">
     <div class="absolute inset-0 opacity-[0.015] pointer-events-none" style="background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
 
-    <div class="max-w-5xl mx-auto w-full flex flex-col items-center text-center relative z-10">
-
-      <!-- Label Mikro: Fokus ke Hasil -->
-      <div class="hero-badge inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-purple-100 bg-purple-50/50 mb-5 sm:mb-8">
+    <div class="max-w-4xl mx-auto w-full flex flex-col items-center text-center relative z-10">
+      <div class="hero-badge inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-purple-100 bg-purple-50/50 mb-6 sm:mb-8">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8B5CF6] opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-[#8B5CF6]"></span>
         </span>
-        <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.35em] text-[#8B5CF6]">Pengerjaan Cepat • Jaminan Nilai A</span>
+        <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#8B5CF6]">Pengerjaan Cepat • Bergaransi</span>
       </div>
 
-      <!-- Judul Utama: Penekanan pada Joki -->
-      <h1 class="hero-title text-[1.9rem] sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight sm:tracking-tighter text-[#1A1A1A] mb-5 sm:mb-8">
+      <h1 class="hero-title text-[1.65rem] sm:text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight sm:tracking-tighter text-[#1A1A1A] mb-6 sm:mb-8 px-2">
         Tugas Website Beres,
         <span class="block mt-1">
           Hasil Pasti
           <RotatingText
             :texts="['MEMUASKAN.', 'RAPI.', 'AMAN.']"
-            main-class-name="inline-flex ml-1.5 px-2 sm:px-2 md:px-3 bg-[#8B5CF6] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 rounded-md sm:rounded-lg align-middle"
+            main-class-name="inline-flex ml-1.5 px-2 sm:px-2 md:px-3 bg-[#8B5CF6] text-white overflow-hidden py-0.5 sm:py-1 md:py-1.5 rounded-md sm:rounded-lg align-middle"
             stagger-from="last"
             :initial="{ y: '100%' }"
             :animate="{ y: 0 }"
@@ -55,25 +51,22 @@ onMounted(() => {
         </span>
       </h1>
 
-      <!-- Proposisi Nilai -->
-      <p class="hero-subtitle text-[13px] sm:text-[14px] md:text-lg font-light text-[#525252] mb-8 sm:mb-14 leading-relaxed max-w-2xl px-2 sm:px-0">
+      <p class="hero-subtitle text-[12px] sm:text-[13px] md:text-base font-light text-[#525252] mb-10 sm:mb-14 leading-relaxed max-w-xl px-4 sm:px-0">
         Solusi joki website profesional untuk tugas sekolah, UTS, hingga skripsi. Kode rapi standar industri, bebas plagiasi, dan siap dikumpulkan tepat waktu.
       </p>
 
-      <!-- Tombol Aksi: Persuasif -->
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto max-w-sm sm:max-w-none mt-1 relative z-20">
-        <button class="hero-cta inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-12 py-3.5 sm:py-4 bg-[#1A1A1A] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-[#8B5CF6] transition-all duration-300 rounded-sm shadow-xl shadow-purple-500/10">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none mt-1 relative z-20">
+        <button class="hero-cta inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-3.5 bg-[#1A1A1A] text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-[#8B5CF6] transition-all duration-300 rounded-sm shadow-xl shadow-purple-500/10">
           Order via WhatsApp
         </button>
-        <button class="hero-cta inline-flex items-center justify-center w-full sm:w-auto px-10 sm:px-12 py-3.5 sm:py-4 border border-zinc-200 text-[#1A1A1A] bg-white text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] hover:border-[#8B5CF6] hover:text-[#8B5CF6] transition-all duration-300 rounded-sm">
+        <button class="hero-cta inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-3.5 border border-zinc-200 text-[#1A1A1A] bg-white text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] hover:border-[#8B5CF6] hover:text-[#8B5CF6] transition-all duration-300 rounded-sm">
           Lihat Hasil Project
         </button>
       </div>
     </div>
 
-    <!-- Info Footer: Jaminan Kualitas -->
-    <div class="hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2 w-full text-center opacity-40">
-      <p class="text-[9px] font-bold uppercase tracking-[0.4em] text-slate-400">Pengerjaan Aman & Bergaransi • No Plagiarism</p>
+    <div class="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2 w-full text-center opacity-40">
+      <p class="text-[8px] font-bold uppercase tracking-[0.4em] text-slate-400">Pengerjaan Aman & Bergaransi • No Plagiarism</p>
     </div>
   </section>
 </template>

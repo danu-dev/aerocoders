@@ -1,54 +1,91 @@
 <template>
-  <section id="contact" class="py-24 px-6 bg-white font-poppins border-t border-zinc-50 relative overflow-hidden">
-    <!-- Subtle Grid Pattern -->
-    <div class="absolute inset-0 opacity-[0.01] pointer-events-none" style="background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
+  <!-- Seksi Kontak: Industrial Tech-Minimalism -->
+  <section id="kontak" class="py-24 px-6 bg-white border-t border-zinc-50 font-poppins relative overflow-hidden selection:bg-[#8B5CF6] selection:text-white">
 
-    <div class="max-w-4xl mx-auto text-left md:text-center relative z-10">
+    <!-- PATTERN: Micro-Dot Grid -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+         style="background-image: radial-gradient(#1A1A1A 0.5px, transparent 0.5px); background-size: 24px 24px;">
+    </div>
 
-      <!-- Label Mikro Joki -->
-      <div class="inline-flex items-center gap-2 mb-10">
-        <span class="w-1 h-1 rounded-full bg-[#8B5CF6] animate-pulse"></span>
-        <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-400">
-          Academic Solution • Finalis JHIC 2025
-        </span>
-      </div>
+    <div class="max-w-5xl mx-auto relative z-10">
 
-      <!-- Headline Modern -->
-      <h2 class="text-3xl md:text-4xl font-semibold tracking-tighter text-[#1A1A1A] leading-tight mb-16 uppercase">
-        Butuh Bantuan Tugas?<br />
-        <span class="text-zinc-400">Amankan Nilai Akademikmu.</span>
-      </h2>
+      <!-- Header: Editorial Style -->
+      <div class="mb-20 text-left relative">
+        <div class="absolute -top-6 -left-6 w-4 h-4 border-t border-l border-zinc-200"></div>
 
-      <!-- Links Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
-        <!-- Email Link -->
-        <a href="mailto:halo@danu.dev" class="group flex flex-col md:items-start items-center transition-all">
-          <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-400 mb-3 group-hover:text-[#8B5CF6]">Direct Inquiry</span>
-          <span class="text-sm font-medium text-[#1A1A1A] border-b border-zinc-100 group-hover:border-[#8B5CF6] transition-all pb-1">
-            halo@danu.dev
-          </span>
-        </a>
-
-        <!-- WhatsApp Link -->
-        <a href="https://wa.me/6281234567890" target="_blank" class="group flex flex-col md:items-end items-center transition-all">
-          <span class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-400 mb-3 group-hover:text-[#8B5CF6]">Quick Assistance</span>
-          <span class="text-sm font-medium text-[#1A1A1A] border-b border-zinc-100 group-hover:border-[#8B5CF6] transition-all pb-1">
-            +62 812 3456 7890
-          </span>
-        </a>
-      </div>
-
-      <!-- Joki Tags Footer -->
-      <div class="mt-24 pt-10 border-t border-zinc-50 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex gap-4">
-          <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-widest">UAS / UTS</span>
-          <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-widest">Tugas Akhir</span>
-          <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-widest">Sistem Bisnis</span>
+        <div class="flex items-center gap-2 mb-6">
+          <span class="flex h-1.5 w-1.5 rounded-full bg-[#8B5CF6] animate-pulse"></span>
+          <h2 class="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-400">
+            Solusi Akademik Premium
+          </h2>
         </div>
-        <p class="text-[9px] text-zinc-400 font-bold uppercase tracking-[0.2em]">
+        <h3 class="text-3xl md:text-4xl font-bold tracking-tighter text-[#1A1A1A] leading-[1.1] mb-8">
+          Konsultasi Project,<br />
+          <span class="text-[#8B5CF6]">Raih Nilai Maksimal.</span>
+        </h3>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
+
+        <!-- Sisi Kiri: Kontak Langsung -->
+        <div class="lg:col-span-5 space-y-12">
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/6283849521229" target="_blank" class="group block">
+            <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-[0.3em] mb-4 block group-hover:text-[#8B5CF6] transition-colors italic">/ Respon Cepat</span>
+            <span class="text-2xl md:text-3xl font-bold text-[#1A1A1A] border-b border-zinc-50 pb-2 group-hover:border-[#8B5CF6] transition-all">
+              +62 838 4952 1229
+            </span>
+          </a>
+
+          <!-- Email: Penyesuaian untuk email panjang -->
+          <a href="mailto:mohammadafdanu@gmail.com" class="group block">
+            <span class="text-[9px] font-bold text-zinc-300 uppercase tracking-[0.3em] mb-4 block group-hover:text-[#8B5CF6] transition-colors italic">/ Email Resmi</span>
+            <!-- text-lg pada mobile agar tidak overflow, md:text-2xl/3xl pada desktop -->
+            <span class="text-lg sm:text-xl md:text-2xl lg:text-[1.6rem] font-bold text-[#1A1A1A] border-b border-zinc-50 pb-2 group-hover:border-[#8B5CF6] transition-all break-all sm:break-normal leading-tight">
+              mohammadafdanu@gmail.com
+            </span>
+          </a>
+        </div>
+
+        <!-- Sisi Kanan: Scope of Work -->
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-4 mb-10">
+            <h4 class="text-[10px] font-bold text-[#1A1A1A] uppercase tracking-[0.4em]">Cakupan Kerja</h4>
+            <div class="h-px flex-1 bg-zinc-50"></div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+            <div v-for="(service, index) in [
+              'Pemrograman UAS', 'Proyek Akhir',
+              'Slicing React & Vue', 'Sistem Laravel',
+              'Aplikasi Mobile', 'Arsitektur Basis Data'
+            ]" :key="index" class="group">
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-bold text-zinc-200 group-hover:text-[#8B5CF6] transition-colors tracking-widest">
+                  0{{ index + 1 }} —
+                </span>
+                <span class="text-[11px] font-bold text-zinc-500 group-hover:text-black transition-colors uppercase tracking-wider leading-relaxed">
+                  {{ service }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Branding -->
+      <div class="mt-24 pt-10 border-t border-zinc-50 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[9px] text-zinc-400 font-bold uppercase tracking-[0.4em]">
           Kode Bersih • Standar Industri • No Plagiarism
         </p>
+        <div class="flex gap-8">
+          <a href="https://www.instagram.com/dannuu________" class="text-[9px] font-bold text-zinc-300 hover:text-black transition-colors uppercase tracking-[0.2em]">Instagram</a>
+          <a href="https://github.com/danu-dev" target="_blank" class="text-[9px] font-bold text-zinc-300 hover:text-black transition-colors uppercase tracking-[0.2em]">GitHub</a>
+        </div>
       </div>
+
     </div>
   </section>
 </template>
