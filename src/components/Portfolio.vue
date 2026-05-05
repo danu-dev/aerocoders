@@ -126,7 +126,7 @@ const projects = [
       </swiper>
 
       <!-- CTA -->
-      <div class="mt-24 flex justify-start items-center border-t border-zinc-50 pt-12 relative">
+      <!-- <div class="mt-24 flex justify-start items-center border-t border-zinc-50 pt-12 relative">
         <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-zinc-200"></div>
 
         <a href="https://wa.me/6281234567890" target="_blank" class="group flex items-center gap-4 transition-all">
@@ -137,7 +137,7 @@ const projects = [
             </svg>
           </div>
         </a>
-      </div>
+      </div> -->
 
     </div>
   </section>

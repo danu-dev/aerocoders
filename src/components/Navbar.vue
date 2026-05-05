@@ -45,7 +45,7 @@ const toggleMenu = () => {
           <a href="#" class="hover:text-[#8B5CF6] transition-colors">Beranda</a>
           <a href="#tentang" class="hover:text-[#8B5CF6] transition-colors">Tentang</a>
           <a href="#layanan" class="hover:text-[#8B5CF6] transition-colors">Layanan</a>
-          <a href="#how-to-order" class="hover:text-[#8B5CF6] transition-colors">Alur</a>
+          <a href="#alur" class="hover:text-[#8B5CF6] transition-colors">Alur</a>
           <a href="#portfolio" class="hover:text-[#8B5CF6] transition-colors">Portofolio</a>
           <a href="#kontak" class="hover:text-[#8B5CF6] transition-colors">Kontak</a>
         </div>
